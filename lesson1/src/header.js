@@ -1,5 +1,5 @@
 import avatar from './1.jpg'
-// import style from  './index.scss'
+import style from  './index.css'
 function Header () {
     var dom = document.getElementById('root')
     var header = document.createElement('div')
@@ -8,7 +8,7 @@ function Header () {
 
     var img = new Image()
     img.src = avatar
-    img.classList.add('avatar')
+    img.classList.add(style.avatar)
     dom.append(img)
 }
 

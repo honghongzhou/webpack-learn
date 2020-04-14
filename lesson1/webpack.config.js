@@ -1,4 +1,6 @@
 const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -27,15 +29,38 @@ module.exports = {
                     modules: true
                 }
             }]
-        }
-        ,{
+        },{
             test: /\.scss$/,
-            use: ['style-loader', 'css-loader','sass-loader','postcss-loader']
+            use: ['style-loader', {
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    importLoaders: 2
+                }
+            } ,'sass-loader', {
+                loader: 'postcss-loader',
+                options: {
+                    plugins: [
+                        require('autoprefixer')
+                    ]
+                }
+            }]
+        },{
+            test: /\.(eot|svg|ttf|woff)$/,
+            loader: 'file-loader'
         }]
     },
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'bundle'),
         publicPath: 'bundle/'
-    }
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: './index.html'
+        }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'bundle')
+        })
+    ]
 }

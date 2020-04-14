@@ -6,9 +6,16 @@
 
 ## Loader
 
+* style-loader
+* css-loader
+* sass-loader
+* postcss-loader
 
+## Plugin
 
-## 787
+* html-webpack-plugin
+* clean-webpack-plugin
+
 
 
 
