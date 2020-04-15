@@ -16,6 +16,12 @@
 * html-webpack-plugin
 * clean-webpack-plugin
 
+## Source Map
+
+* source map: 将编码之后的代码映射回源代码
+* inline-source-map: 定位报错的文件位置
+
+
 
 
 

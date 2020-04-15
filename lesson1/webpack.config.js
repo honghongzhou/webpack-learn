@@ -1,6 +1,6 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -50,10 +50,9 @@ module.exports = {
             loader: 'file-loader'
         }]
     },
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'bundle'),
-        publicPath: 'bundle/'
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './bundle'
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -62,5 +61,10 @@ module.exports = {
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'bundle')
         })
-    ]
+    ],
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'bundle'),
+        // publicPath: 'bundle/'
+    }
 }
