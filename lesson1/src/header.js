@@ -1,5 +1,7 @@
 import avatar from './1.jpg'
 import style from  './index.css'
+
+console.log('header')
 function Header () {
     var dom = document.getElementById('root')
     var header = document.createElement('div')

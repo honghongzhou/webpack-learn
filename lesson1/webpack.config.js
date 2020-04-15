@@ -3,7 +3,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    // entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        sideBar: './src/sidebar.js'
+    },
     module: {
         rules: [{
             test: /\.jpg$/,
@@ -63,7 +67,7 @@ module.exports = {
         })
     ],
     output: {
-        filename: 'bundle.js',
+        filename: "[name].js",
         path: path.resolve(__dirname, 'bundle'),
         // publicPath: 'bundle/'
     }
