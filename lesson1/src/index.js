@@ -1,7 +1,7 @@
 // import Header from './header.js'
 // import SideBar from './sidebar.js'
 // import Content from './content.js'
-import avatar from './1.jpg'
+// import avatar from './1.jpg'
 import style from  './index.scss'
 import style1 from '../font/iconfont.css'
 

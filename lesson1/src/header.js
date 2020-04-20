@@ -1,4 +1,4 @@
-import avatar from './1.jpg'
+// import avatar from './1.jpg'
 import style from  './index.css'
 
 console.log('header')
