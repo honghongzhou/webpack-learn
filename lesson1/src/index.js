@@ -3,7 +3,7 @@
 // import Content from './content.js'
 // import avatar from './1.jpg'
 import style from  './index.scss'
-import style1 from '../font/iconfont.css'
+// import style1 from '../font/iconfont.css'
 
 console.log(style1)
 
