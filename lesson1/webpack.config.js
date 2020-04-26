@@ -1,6 +1,7 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack')
 module.exports = {
     mode: 'development',
     // entry: './src/index.js',
@@ -53,9 +54,14 @@ module.exports = {
             loader: 'file-loader'
         }]
     },
-    devtool: 'inline-source-map',
+    // devtool: 'cheap-module-eval-source-map', //测试，预发
+    devtool: 'cheap-module-source-map', //线上
     devServer: {
-        contentBase: './bundle'
+        contentBase: './bundle',
+        open: true,
+        proxy: {},
+        hot: true,
+        hotOnly: true
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -63,11 +69,12 @@ module.exports = {
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: path.resolve(__dirname, 'bundle')
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, 'bundle'),
-        // publicPath: 'bundle/'
+        publicPath: '/'
     }
 }
