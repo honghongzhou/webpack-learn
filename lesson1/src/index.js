@@ -1,5 +1,5 @@
 
-import style from  './index.scss'
+import { cube } from './main'
 
   let Header
 
@@ -10,14 +10,14 @@ import style from  './index.scss'
   ).then(module => {
     Header = module.default
   })
-
-var img = new Image()
-img.src = avatar
-img.classList.add(style.avatar)
-
-
-console.log('123')
+let result = cube(5)
+console.log(result)
 
 setTimeout(() => {
   new Header()
+  if(module.hot){
+    module.hot.accept('./header.js', () => {
+      console.log('header.js changed')
+    })
+  }
 }, 3000)

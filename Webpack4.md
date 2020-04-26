@@ -25,6 +25,13 @@
 
 ## Hot Module Replacement
 
+## tree shaking
+
+* 去除无用的代码，压缩文件，优化。
+
+## 生产环境构建
+
+* 生产与预发共享一个通用配置
 
 
 

@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     // entry: './src/index.js',
     entry: {
         index: './src/index.js',
