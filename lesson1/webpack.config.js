@@ -6,7 +6,6 @@ module.exports = {
     // entry: './src/index.js',
     entry: {
         index: './src/index.js',
-        sideBar: './src/sidebar.js'
     },
     module: {
         rules: [{
